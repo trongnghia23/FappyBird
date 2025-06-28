@@ -31,8 +31,9 @@ public class PipeSpawner : spawner
     { 
         if (GameManager.Instance.state != GameState.Playing) return;
 
-        Transform Pipe = this.Spawn(Pipe1,transform.position,Quaternion.identity);
-        Pipe.gameObject.SetActive(true);
-        Pipe.gameObject.transform.position += Vector3.up * Random.Range(minheight,maxheight);
+        Vector3 spawnPos = transform.position + Vector3.up * Random.Range(minheight, maxheight);
+        Transform pipe = this.Spawn(Pipe1, spawnPos, Quaternion.identity);
+        pipe.gameObject.SetActive(true);
+
     }
 }

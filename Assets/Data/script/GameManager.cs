@@ -24,7 +24,7 @@ public class GameManager : NghiaMono
         base.Awake();
         if (GameManager.instance != null) Debug.LogError("only one GameManager allow to exist");
         GameManager.instance = this;
-        Application.targetFrameRate = 60;
+       
         this.Wait();
     }
     public virtual void Play()
